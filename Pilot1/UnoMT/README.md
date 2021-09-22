@@ -1,7 +1,23 @@
-# UnoMT in Pytorch
-Multi-tasking (drug response, cell line classification, etc.) Uno Implemented in PyTorch.
-https://github.com/xduan7/UnoPytorch
+### Model Description
 
+The Pilot 1 Multi-tasking Unified Drug Response Predictor benchmark, shows how to train and use a neural network model to predict tumor dose response across multiple data sources implementing UNO in PyTorch. The model takes cell line molecular features, drug properties, and dose information as input and predicts the response in percentage growth. The model uses a multi-tower structure for processing different feature types individually before concatenating them for the final layers. The model also unifies treatment input types of single drugs and drug pairs by allocating two slots for drugs and, in the case of drug pairs, dividing the concentration into the two slots. The authors of this model have integrated datasets from multiple public sources of drug response studies and provided options for training models with selections of subsets.
+
+
+### Setup
+To set up the Python environment needed to train and run this model:
+1. Install [conda](https://docs.conda.io/en/latest/) package manager.
+2. Clone this repository.
+3. Create the environment as shown below.
+
+```bash
+   conda env create -f environment.yml -n UNOMT
+   conda activate UNOMT
+   ```
+
+To download the processed data needed to train and test the model, and the trained model files:
+1. Create an account first on the Model and Data Clearinghouse [MoDaC](modac.cancer.gov). 
+2. Follow the instructions in the Training section below.
+3. When prompted, enter your MoDaC credentials.
 
 ## Todos
 * More labels for the network like drug labels;
